@@ -1,0 +1,114 @@
+.layout {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  width: 220px;
+  background: #1e2a38;
+  color: white;
+  padding: 15px;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.menu li.active {
+  background: #2196f3;
+  border-radius: 4px;
+  padding-left: 10px;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f6f6f6;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.profile {
+  border-radius: 50%;
+}
+
+.title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabs button {
+  margin-right: 8px;
+  background: #f1f1f1;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.card {
+  background: white;
+  margin: 15px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card-header {
+  background: #2196f3;
+  color: white;
+  padding: 8px 12px;
+  font-weight: bold;
+}
+
+.table {
+  display: table;
+  width: 100%;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.table-row div {
+  display: table-cell;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.header div {
+  font-weight: bold;
+  background: #f9f9f9;
+}
+
+.row {
+  display: flex;
+  gap: 15px;
+}
+
+.half {
+  flex: 1;
+}

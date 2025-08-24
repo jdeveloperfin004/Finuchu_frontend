@@ -1,0 +1,147 @@
+<div class="layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon"><i class="fa-solid fa-seedling"></i></div>
+      <div class="brand-text">Finuchu</div>
+    </div>
+
+    <ul class="menu">
+      <li *ngFor="let m of menu" [class.active]="m.active">
+        <i [class]="m.icon"></i>
+        <span>{{ m.label }}</span>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <small>v1.0</small>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Top Toolbar (aqua bar) -->
+    <div class="topbar">
+      <div class="top-left">
+        <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
+        <div class="app-title">Grower Schedule</div>
+      </div>
+
+      <div class="top-right">
+        <div class="season">Yuma: 2017-2018</div>
+        <div class="toolbar-icons">
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <i class="fa-regular fa-clock"></i>
+        </div>
+        <div class="profile-block">
+          <div class="brand-icon" style="border-radius: 50%;height: 20px;width: 20px;">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <span class="username">serfeAdmin</span>
+        </div>
+        <div class="lang">EN <i class="fa-solid fa-chevron-down"></i></div>
+      </div>
+    </div>
+
+    <!-- Title bar with tabs and search -->
+    <div class="title-bar">
+      <div class="left">
+        <h3>Grower Schedule</h3>
+        <div class="small-tabs">
+          <button class="tab active">Shipper Schedule</button>
+          <button class="tab">Grower Schedule</button>
+          <button class="tab">Block</button>
+          <button class="tab">Double Crop</button>
+        </div>
+      </div>
+
+      <div class="right">
+        <input type="text"  placeholder="Search..." />
+        <button class="btn-save"><i class="fa-solid fa-save"></i> SAVE</button>
+      </div>
+    </div>
+
+    <!-- Shipper Schedule Section -->
+     <div>
+    <section class="card">
+      <div class="card-header blue">SHIPPER SCHEDULE ({{shipperSchedule.length}})</div>
+      <div class="table">
+        <div class="table-row header">
+          <div>Shipper</div><div>Wk Date</div><div>Seed</div><div>Variety</div>
+          <div>Estimated Harvest Date</div><div>Acres</div><div>Acres Not Scheduled</div>
+        </div>
+        <div class="table-row" *ngFor="let s of shipperSchedule">
+          <div class="shipper-cell">
+            <div ><div class="dot plus"></div></div>
+            <div>{{s.shipper}}</div>
+          </div>
+          <div>{{s.wkDate}}</div>
+          <div>{{s.seed}}</div>
+          <div>{{s.variety}}</div>
+          <div>{{s.harvestDate}}</div>
+          <div>{{s.acres}}</div>
+          <div class="danger">{{s.acresNotScheduled}}</div>
+        </div>
+      </div>
+    </section>
+</div>
+    <!-- Two column section -->
+     <div>
+    <section class="row two-columns">
+      <div class="card half">
+        <div class="card-header blue">BLOCK INFORMATION ({{blocks.length}})</div>
+        <div class="table compact">
+          <div class="table-row header">
+            <div>Block</div><div>Acres</div><div>Available Acres</div><div>Last Harvest Date</div>
+          </div>
+          <div class="table-row" *ngFor="let b of blocks">
+            <div>{{b.block}}</div><div>{{b.acres}}</div><div class="available">{{b.available}}</div><div>{{b.lastHarvest}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card half">
+        <div class="card-header blue">GROWER SCHEDULE</div>
+        <div class="table compact">
+          <div class="table-row header">
+            <div>Shipper</div><div>PCA</div><div>Scheduled Wk Date</div><div>Seed</div><div>Variety</div>
+          </div>
+          <div class="table-row" *ngFor="let g of growerSchedule">
+            <div>{{g.shipper}}</div><div>{{g.pca}}</div><div>{{g.scheduledDate}}</div><div>{{g.seed}}</div><div>{{g.variety}}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+</div>
+    <!-- duplicate block rows to mimic screenshot -->
+     <div>
+    <section class="row two-columns">
+      <div class="card half">
+        <div class="card-header blue">BLOCK INFORMATION ({{blocks.length}})</div>
+        <div class="table compact">
+          <div class="table-row header">
+            <div>Block</div><div>Acres</div><div>Available Acres</div><div>Last Harvest Date</div>
+          </div>
+          <div class="table-row" *ngFor="let b of blocks">
+            <div>{{b.block}}</div><div>{{b.acres}}</div><div class="available">{{b.available}}</div><div>{{b.lastHarvest}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card half">
+        <div class="card-header blue">GROWER SCHEDULE</div>
+        <div class="table compact">
+          <div class="table-row header">
+            <div>Shipper</div><div>PCA</div><div>Scheduled Wk Date</div><div>Seed</div><div>Variety</div>
+          </div>
+          <div class="table-row" *ngFor="let g of growerSchedule">
+            <div>{{g.shipper}}</div><div>{{g.pca}}</div><div>{{g.scheduledDate}}</div><div>{{g.seed}}</div><div>{{g.variety}}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+  </main>
+</div>
+<!-- App shell -->

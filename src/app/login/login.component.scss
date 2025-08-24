@@ -1,0 +1,120 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;             /* vertical center */
+  justify-content: flex-end;       /* right align the login card */
+  padding-right: 6%;               /* space from right edge */
+  box-sizing: border-box;
+
+  /* Background image: use local asset or change to your URL */
+  background-image: url("/bgimg.jpg");
+  background-size: cover;
+  background-position: center right; /* focus on right area */
+  background-repeat: no-repeat;
+  background-attachment: fixed;      /* optional: parallax-like on scroll */
+}
+// body {
+//   background-image: url('/assets/bgimg.jpg');
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   height: 100vh;
+// }
+
+
+/* Login Card */
+.login-card {
+  background: rgba(58, 42, 42, 0.6); /* semi-transparent */
+  backdrop-filter: blur(10px);       /* glass-like blur */
+  padding: 25px;
+  border-radius: 15px;
+  width: 350px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Title */
+.title {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Form labels & inputs */
+.form-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #f1f1f1;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Buttons */
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.btn {
+  flex: 1;
+  margin: 4px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+}
+
+.validate {
+  background: teal;
+}
+
+.passcode {
+  background: darkblue;
+}
+
+.login {
+  background: green;
+}
+
+.cancel {
+  background: red;
+}
+
+.close {
+  background: gray;
+}
+@media (max-width: 720px) {
+  .login-page {
+    justify-content: center;  /* center on mobile */
+    padding-right: 16px;
+    padding-left: 16px;
+    background-position: center top;
+    background-attachment: scroll;
+  }
+  .login-card {
+    width: 100%;
+    max-width: 420px;
+  }
+}

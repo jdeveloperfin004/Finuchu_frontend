@@ -1,0 +1,89 @@
+<div class="layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">GreenField</div>
+    <ul class="menu">
+      <li>Dashboard</li>
+      <li>Block Activity</li>
+      <li>Portfolio Manager</li>
+      <li>Harvest Manager</li>
+      <li>Farm Manager Approvals</li>
+      <li>Planning</li>
+      <li class="active">Grower Schedule</li>
+      <li>Finishing Schedule</li>
+      <li>Block Schedule Manager</li>
+      <li>Reports</li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Top Navbar -->
+    <header class="navbar">
+      <div class="season">Yuma: 2017-2018</div>
+      <div class="actions">
+        <span class="lang">EN</span>
+        <img src="https://via.placeholder.com/32" class="profile" alt="profile"/>
+      </div>
+    </header>
+
+    <!-- Title Bar -->
+    <div class="title-bar">
+      <h2>Grower Schedule</h2>
+      <div class="tabs">
+        <button>Shipper Schedule</button>
+        <button>Grower Schedule</button>
+        <button>Block</button>
+        <button>Double Crop</button>
+      </div>
+      <input type="text" placeholder="Search..." />
+    </div>
+
+    <!-- Shipper Schedule Section -->
+    <section class="card">
+      <div class="card-header">SHIPPER SCHEDULE ({{shipperSchedule.length}})</div>
+      <div class="table">
+        <div class="table-row header">
+          <div>Shipper</div><div>Wk Date</div><div>Seed</div><div>Variety</div>
+          <div>Est Harvest Date</div><div>Acres</div><div>Acres Not Scheduled</div>
+        </div>
+        <div class="table-row" *ngFor="let s of shipperSchedule">
+          <div>{{s.shipper}}</div><div>{{s.wkDate}}</div><div>{{s.seed}}</div>
+          <div>{{s.variety}}</div><div>{{s.harvestDate}}</div>
+          <div>{{s.acres}}</div><div>{{s.acresNotScheduled}}</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Block Information + Grower Schedule (side by side) -->
+    <section class="row">
+      <div class="card half">
+        <div class="card-header">BLOCK INFORMATION ({{blocks.length}})</div>
+        <div class="table">
+          <div class="table-row header">
+            <div>Block</div><div>Acres</div><div>Available Acres</div><div>Last Harvest Date</div>
+          </div>
+          <div class="table-row" *ngFor="let b of blocks">
+            <div>{{b.block}}</div><div>{{b.acres}}</div>
+            <div>{{b.available}}</div><div>{{b.lastHarvest}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card half">
+        <div class="card-header">GROWER SCHEDULE</div>
+        <div class="table">
+          <div class="table-row header">
+            <div>Shipper</div><div>PCA</div><div>Scheduled Wk Date</div>
+            <div>Seed</div><div>Variety</div>
+          </div>
+          <div class="table-row" *ngFor="let g of growerSchedule">
+            <div>{{g.shipper}}</div><div>{{g.pca}}</div>
+            <div>{{g.scheduledDate}}</div><div>{{g.seed}}</div>
+            <div>{{g.variety}}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
