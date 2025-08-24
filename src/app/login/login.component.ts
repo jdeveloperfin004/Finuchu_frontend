@@ -14,7 +14,7 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
   onValidate() { 
-    // this.router.navigate(['/lists']);
+   this.router.navigate(['/lists']);
     
     alert('Validate clicked'); 
   }

@@ -7,18 +7,18 @@
   box-sizing: border-box;
 
   /* Background image: use local asset or change to your URL */
-  background-image: url("/bgimg.jpg");
+//  background-image: url("/assets/bgimg.jpg");
   background-size: cover;
   background-position: center right; /* focus on right area */
   background-repeat: no-repeat;
   background-attachment: fixed;      /* optional: parallax-like on scroll */
 }
-// body {
-//   background-image: url('/assets/bgimg.jpg');
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   height: 100vh;
-// }
+ body {
+   background-image: url('/assets/bgimg.jpg');
+  background-size: cover;
+   background-repeat: no-repeat;
+   height: 100vh;
+ }
 
 
 /* Login Card */
