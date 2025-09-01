@@ -1,24 +1,26 @@
-.login-page {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;             /* vertical center */
-  justify-content: flex-end;       /* right align the login card */
-  padding-right: 6%;               /* space from right edge */
-  box-sizing: border-box;
-
-  /* Background image: use local asset or change to your URL */
-//  background-image: url("/assets/bgimg.jpg");
-  background-size: cover;
-  background-position: center right; /* focus on right area */
-  background-repeat: no-repeat;
-  background-attachment: fixed;      /* optional: parallax-like on scroll */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* 🚫 removes scroll */
 }
- body {
-   background-image: url('/assets/bgimg.jpg');
+
+body {
+  background-image: url('/assets/bgimg.jpg');
   background-size: cover;
-   background-repeat: no-repeat;
-   height: 100vh;
- }
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 96vh;
+}
+
+.login-page {
+  height: 100%;                 /* full height */
+  display: flex;
+  align-items: center;          /* vertical center */
+  justify-content: flex-end;    /* right align card */
+  padding-right: 6%;
+  box-sizing: border-box;
+}
 
 
 /* Login Card */
