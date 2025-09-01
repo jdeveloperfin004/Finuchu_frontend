@@ -65,21 +65,21 @@
     <!-- Shipper Schedule Section -->
      <div>
     <section class="card">
-      <div class="card-header blue">SHIPPER SCHEDULE ({{shipperSchedule.length}})</div>
+      <div class="card-header blue">SHIPPER SCHEDULE ({{vendors.length}})</div>
       <div class="table">
         <div class="table-row header">
-          <div>Shipper</div><div>Wk Date</div><div>Seed</div><div>Variety</div>
+          <div>VendorId</div><div>Vendor Number</div><div>Vendor Name</div><div>Variety</div>
           <div>Estimated Harvest Date</div><div>Acres</div><div>Acres Not Scheduled</div>
         </div>
-        <div class="table-row" *ngFor="let s of shipperSchedule">
+        <div class="table-row" *ngFor="let s of vendors">
           <div class="shipper-cell">
             <div ><div class="dot plus"></div></div>
-            <div>{{s.shipper}}</div>
+            <div>{{s.vendorId}}</div>
           </div>
-          <div>{{s.wkDate}}</div>
-          <div>{{s.seed}}</div>
-          <div>{{s.variety}}</div>
-          <div>{{s.harvestDate}}</div>
+          <!-- <div>{{s.companyGroupId}}</div> -->
+          <div>{{s.mobileNumber}}</div>
+          <div>{{s.vendorName}}</div>
+          <div>{{s.address}}</div>
           <div>{{s.acres}}</div>
           <div class="danger">{{s.acresNotScheduled}}</div>
         </div>

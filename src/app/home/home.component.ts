@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { VendorService } from '../vendor.service';
 
 @Component({
   selector: 'app-home',
@@ -21,4 +23,19 @@ export class HomeComponent {
     { shipper: 'Dole', pca: 'Brian', scheduledDate: 'Sep 5', seed: 'Romaine', variety: 'Lettuce' },
     { shipper: 'Taylor', pca: 'Erin', scheduledDate: 'Sep 12', seed: 'Iceberg', variety: 'Lettuce' }
   ];
+ vendors: any[] = [];
+
+  constructor(private router: Router,private vendorService: VendorService) {}
+  ngOnInit() {
+    // Call Spring Boot API when Login page loads
+    this.vendorService.getAllVendors().subscribe({
+  next: (data: any) => {  // 👈 added type
+    this.vendors = data;
+  },
+  error: (err: any) => {  // 👈 added type
+    console.error(err);
+  }
+});
+
+}
 }

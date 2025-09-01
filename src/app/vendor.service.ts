@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class VendorService {
 
-  private apiUrl = 'http://localhost:8080/SPRINGBOOTPROJ01-RESTAPI_CRUD_02/rest-api';
+  private apiUrl = 'http://localhost:8080/SPRINGBOOTPROJ04-RESTAPI_CRUD_01/vendor-api';
 
   constructor(private http: HttpClient) {}
 

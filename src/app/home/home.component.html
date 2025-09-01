@@ -47,10 +47,8 @@
           <div>Shipper</div><div>Wk Date</div><div>Seed</div><div>Variety</div>
           <div>Est Harvest Date</div><div>Acres</div><div>Acres Not Scheduled</div>
         </div>
-        <div class="table-row" *ngFor="let s of shipperSchedule">
-          <div>{{s.shipper}}</div><div>{{s.wkDate}}</div><div>{{s.seed}}</div>
-          <div>{{s.variety}}</div><div>{{s.harvestDate}}</div>
-          <div>{{s.acres}}</div><div>{{s.acresNotScheduled}}</div>
+        <div class="table-row" *ngFor="let s of vendors">
+          <div>{{s.vendorId}}</div><div>{{s.vendorName}}</div><div>{{s.mobileNumber}}</div>
         </div>
       </div>
     </section>
@@ -63,7 +61,7 @@
           <div class="table-row header">
             <div>Block</div><div>Acres</div><div>Available Acres</div><div>Last Harvest Date</div>
           </div>
-          <div class="table-row" *ngFor="let b of blocks">
+          <div class="table-row" *ngFor="let b of vendors">
             <div>{{b.block}}</div><div>{{b.acres}}</div>
             <div>{{b.available}}</div><div>{{b.lastHarvest}}</div>
           </div>
@@ -77,7 +75,7 @@
             <div>Shipper</div><div>PCA</div><div>Scheduled Wk Date</div>
             <div>Seed</div><div>Variety</div>
           </div>
-          <div class="table-row" *ngFor="let g of growerSchedule">
+          <div class="table-row" *ngFor="let g of vendors">
             <div>{{g.shipper}}</div><div>{{g.pca}}</div>
             <div>{{g.scheduledDate}}</div><div>{{g.seed}}</div>
             <div>{{g.variety}}</div>

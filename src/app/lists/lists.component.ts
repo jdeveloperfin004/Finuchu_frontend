@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { VendorService } from '../vendor.service';
 
 @Component({
   selector: 'app-lists',
@@ -53,7 +55,23 @@ defaultAvatar = 'assets/default-avatar.png';
     img.onerror = null;
     img.src = this.defaultAvatar;
   }
+vendors: any[] = [];
 
+  constructor(private router: Router,private vendorService: VendorService) {}
+  ngOnInit() {
+    // Call Spring Boot API when Login page loads
+    this.vendorService.getAllVendors().subscribe({
+  next: (data: any) => {  // 👈 added type
+    this.vendors = data;
+    console.log(this.vendors,"aaaaaaaaaa");
+    
+  },
+  error: (err: any) => {  // 👈 added type
+    console.error(err);
+  }
+});
+
+}
 }
 
 
